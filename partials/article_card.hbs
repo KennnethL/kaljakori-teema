@@ -1,0 +1,17 @@
+<article class="card {{post_class}} {{classes}}{{#unless feature_image}} no-image{{/unless}}">
+  {{#if feature_image}}
+    <a class="post-card-image-link" href="{{url}}">
+      <img src="{{feature_image}}" class="card-img-top" alt="{{title}}">
+    </a>
+  {{/if}}
+    <div class="post-excerpt content card-body">
+      <h2 class="card-title"><a href="{{url}}">{{title}}</a></h2>
+      <!--a href="{{url}}">
+      <p class="card-text">{{excerpt words="26"}}&#8230;</p>
+      </a-->
+    </div>
+  <footer class="card-footer text-muted">
+    <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D.M. YYYY"}}</time>
+    <span class="text-muted">{{tags prefix="| Avainsanat: "}}</span>
+  </footer>
+</article>

@@ -1,0 +1,10 @@
+node_modules/
+
+assets/css
+assets/js
+assets/images
+
+yarn-error.log
+npm-debug.log
+
+kaljakori-teema.zip

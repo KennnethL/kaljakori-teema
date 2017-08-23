@@ -1,0 +1,26 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="navbar-brand">
+    {{#if @blog.logo}}
+      <a class="navbar-item" href="/">
+        <img src="{{@blog.logo}}" alt="{{@blog.description}}" width="30" height="27">
+      </a>
+    {{/if}}
+  </div>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navMenuMain" aria-controls="navMenuMain" aria-expanded="false" aria-label="Avaa/Sulje navigaatio">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="navMenuMain" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      {{#foreach navigation}}
+        <li class="nav-item"><a href="{{url absolute="true"}}" class="nav-link nav-{{slug}}{{#if current}} nav-current{{/if}}">{{label}}</a></li>
+      {{/foreach}}
+    </ul>
+    <div class="navbar-nav">
+      {{#if @labs.subscribers}}
+        <a class="nav-link subscribe-button" href="{{@blog.url}}/subscribe/">Tilaa</a>
+      {{!-- else--}}
+        <!--a class="nav-link subscribe-button icon-feed" href="{{@blog.url}}/rss/">Syöte</a-->
+      {{/if}}
+    </div>
+  </div>
+</nav>

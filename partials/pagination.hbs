@@ -1,0 +1,11 @@
+<nav class="pagination container" role="navigation">
+  <div class="row">
+    {{#if prev}}
+        <a class="btn btn-secondary next col" href="{{page_url prev}}">&larr; Uudemmat</a>
+    {{/if}}
+    <span class="page-number col">Sivu {{page}} / {{pages}}</span>
+    {{#if next}}
+        <a class="btn btn-secondary prev col" href="{{page_url next}}">Vanhemmat &rarr;</a>
+    {{/if}}
+  </div>
+</nav>

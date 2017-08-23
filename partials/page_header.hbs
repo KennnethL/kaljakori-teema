@@ -1,0 +1,26 @@
+{{#is "post"}}
+{{#post}}
+<header class="jumbotron jumbotron-fluid"  style="background-image: url('{{asset "images/bg-kuohu.jpg"}}');">
+  <div class="container text-center">
+    <h1 class="title">{{title}}</h1>
+    <p><time class="date lead" datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="D.M. YYYY"}}</time></p>
+    <p>{{tags prefix="Avainsanat: "}}</p>
+  </div>
+</header>
+{{/post}}
+{{/is}}
+{{#is "page"}}
+<header class="jumbotron jumbotron-fluid"  style="background-image: url('{{asset "images/bg-kuohu.jpg"}}');">
+  <div class="container text-center">
+    <h1 class="title">{{page.title}}</h1>
+  </div>
+</header>
+{{/is}}
+{{#is "index, tag"}}
+<header class="jumbotron jumbotron-fluid" style="background-image: url('{{asset "images/bg-kuohu.jpg"}}');">
+    <div class="container text-center">
+      <h1 class="title">{{@blog.title}}</h1>
+      <p class="lead">{{@blog.description}}</p>
+    </div>
+</header>
+{{/is}}

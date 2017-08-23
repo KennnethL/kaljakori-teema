@@ -1,0 +1,14 @@
+
+<!--div class="extra-pagination inner">
+    {{pagination}}
+</div-->
+
+<div class="container card-columns">
+    {{!-- This is the post loop - each post will be output using this markup --}}
+    {{#foreach posts}}
+      {{> article_card this}}
+    {{/foreach}}
+
+    {{!-- Previous/next page links - displayed on every page --}}
+    {{!--pagination--}}
+</div>

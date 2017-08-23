@@ -1,0 +1,50 @@
+{{!< default}}
+
+{{#post}}
+  <main class="section" role="main">
+    <div class="container {{post_class}}">
+
+      <div class="content">
+        {{#if feature_image}}<img src="{{img_url feature_image}}" alt="{{title}}" class="feature-img" />{{/if}}
+        {{content}}
+      </div>
+
+      <footer>
+        {{!-- Everything inside the #author tags pulls data from the author --}}
+        {{#author}}
+
+          <section class="author">
+            <p>- {{name}}</p>
+          </section>
+
+        {{/author}}
+
+        {{!-- Email subscribe form at the bottom of the page --}}
+        {{#if @labs.subscribers}}
+
+          <section class="gh-subscribe">
+            <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
+            <p>Get the latest posts delivered right to your inbox.</p>
+            {{subscribe_form placeholder="Your email address"}}
+            <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+          </section>
+        {{/if}}
+
+        {{> share_buttons this}}
+
+      </footer>
+
+    </div>
+    {{!-- Links to Previous/Next posts --}}
+    <aside class="read-next container">
+      <div class="card-deck no-gutters justify-content-between">
+        {{#prev_post}}
+          {{> article_card this classes='navigation prev col-12 col-md-6'}}
+        {{/prev_post}}
+        {{#next_post}}
+          {{> article_card this classes='navigation next col-12 col-md-6'}}
+        {{/next_post}}
+      </div>
+    </aside>
+  </main>
+{{/post}}
