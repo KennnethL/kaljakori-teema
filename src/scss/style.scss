@@ -98,7 +98,8 @@ h2 {
 .post {
   p {
     img {
-      margin: $spacer 0;
+      margin: $spacer auto;
+      display: block;
     }
   }
 
