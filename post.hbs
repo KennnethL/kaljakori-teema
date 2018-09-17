@@ -10,14 +10,14 @@
       </div>
 
       <footer>
-        {{!-- Everything inside the #author tags pulls data from the author --}}
-        {{#author}}
-
+        {{!-- Everything inside the #authors tags pulls data from the author --}}
+        {{#if authors}}
+        {{#authors}}
           <section class="author">
             <p>- {{name}}</p>
           </section>
-
-        {{/author}}
+        {{/authors}}
+        {{/if}}
 
         {{!-- Email subscribe form at the bottom of the page --}}
         {{#if @labs.subscribers}}

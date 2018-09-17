@@ -1,10 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/js/kaljakori.js',
   target: 'web',
-  devtool: 'inline-source-map',
   output: {
     filename: 'kaljakori.js',
     path: path.resolve(__dirname, 'assets/js')
@@ -12,10 +12,25 @@ module.exports = {
   externals: {
     'jquery': 'jQuery'
   },
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        include: path.resolve(__dirname, 'assets/js/'),
+        uglifyOptions: {
+          warnings: false,
+          parse: {},
+          compress: {},
+          mangle: true, // Note `mangle.properties` is `false` by default.
+          output: null,
+          toplevel: false,
+          nameCache: null,
+          ie8: false,
+          keep_fnames: false,
+        }
+      })
+    ]
+  },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      include: path.resolve(__dirname, 'assets/js/')
-    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
